@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+:root {
+  font-size: 16px;
+  line-height: 1.5;
+
+  --fg: #333;
+  --grey: #EEE;
+}
+
+body {
+  color: var(--fg);
+}

@@ -1,0 +1,8 @@
+.container {
+  position: fixed;
+  top: 0.5em;
+  right: 1.5em;
+  background-color: white;
+  border: 1px solid var(--fg);
+  padding: 1em;
+}

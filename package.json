@@ -1,0 +1,84 @@
+{
+  "name": "kanjigrid",
+  "version": "0.0.1",
+  "description": "kanji grid generator",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rm -rf ./dist; webpack --mode production --display-modules --config webpack.prod.js",
+    "dev": "webpack-dev-server --mode development --config webpack.dev.js --host 0.0.0.0",
+    "lint": "eslint src; stylelint \"src/**/*.css\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-a11y/recommended"
+    ],
+    "plugins": [
+      "stylelint-a11y",
+      "stylelint-no-unsupported-browser-features",
+      "stylelint-high-performance-animation",
+      "stylelint-declaration-block-no-ignored-properties"
+    ],
+    "rules": {
+      "plugin/declaration-block-no-ignored-properties": true,
+      "plugin/no-unsupported-browser-features": true,
+      "plugin/no-low-performance-animation-properties": true,
+      "a11y/no-display-none": true
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-custom-properties": {
+        "importFrom": "src/main.css"
+      },
+      "autoprefixer": {},
+      "cssnano": {}
+    }
+  },
+  "author": "Sid Mani",
+  "license": "Copyright (c) Sid Mani 2020",
+  "dependencies": {
+    "chroma": "0.0.1",
+    "jszip": "^3.5.0",
+    "mithril": "^2.0.4",
+    "sanitize.css": "^11.0.1",
+    "sql.js": "^1.3.0",
+    "tinygradient": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.4",
+    "babel-loader": "^8.1.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.6.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-loader": "^3.0.0",
+    "sitemap-webpack-plugin": "^0.8.1",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-high-performance-animation": "^1.5.1",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
+    "tap": "^14.10.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.8"
+  }
+}
